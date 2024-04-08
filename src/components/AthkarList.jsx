@@ -61,7 +61,7 @@ const AthkarList = () => {
                     key={item.ID}
                     id={item.ID}
                     title={item.TITLE}
-                    subtitle="5 دقائق"
+                    subtitle="كتاب حصن المسلم"
                   />
                 );
               })

@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaPrayingHands } from "react-icons/fa";
-const AthkarListItem = ({ title = "عنوان", subtitle = "عنوان بديل" }) => {
+const AthkarListItem = ({ title = "عنوان", subtitle = "عنوان بديل", id }) => {
   return (
     <Link to={`/athkars/${id}`}>
       <div className="bg-whiteColor p-4 rounded-lg duration-300 hover:scale-105 hover:bg-greenColor group cursor-pointer h-full">
