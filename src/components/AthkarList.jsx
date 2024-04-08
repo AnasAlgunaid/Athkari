@@ -13,7 +13,7 @@ const AthkarList = () => {
 
   // Fetching data from API
   useEffect(() => {
-    fetch("http://www.hisnmuslim.com/api/ar/husn_ar.json")
+    fetch("https://www.hisnmuslim.com/api/ar/husn_ar.json")
       .then((res) => {
         return res.json();
       })
