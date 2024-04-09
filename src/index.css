@@ -1,3 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.rhap_main-controls-button {
+  color: #00ac68;
+}
+
+.rhap_progress-indicator,
+.rhap_progress-filled {
+  background-color: #00ac68;
+}
+
+.rhap_container {
+  border-radius: 0.5rem;
+}

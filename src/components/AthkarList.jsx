@@ -62,6 +62,7 @@ const AthkarList = () => {
                     id={item.ID}
                     title={item.TITLE}
                     subtitle="كتاب حصن المسلم"
+                    soundSrc={item.AUDIO_URL}
                   />
                 );
               })

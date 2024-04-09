@@ -1,9 +1,15 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { FaPrayingHands } from "react-icons/fa";
-const AthkarListItem = ({ title = "عنوان", subtitle = "عنوان بديل", id }) => {
+
+const AthkarListItem = ({
+  title = "عنوان",
+  subtitle = "عنوان بديل",
+  id,
+  soundSrc,
+}) => {
   return (
-    <Link to={`/athkars/${id}`}>
+    <Link to={`/athkars/${id}`} state={{ source: soundSrc }}>
       <div className="bg-whiteColor p-4 rounded-lg duration-300 hover:scale-105 hover:bg-greenColor group cursor-pointer h-full">
         <div className="h-10 w-10 bg-greenColor rounded-full text-white flex justify-center items-center group-hover:bg-white group-hover:text-greenColor mb-2">
           <FaPrayingHands className="text-lg" />
