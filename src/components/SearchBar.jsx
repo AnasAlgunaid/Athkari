@@ -30,7 +30,7 @@ const SearchBar = ({ placeholder = "البحث", onChange }) => {
   return (
     <div className="my-4 flex flex-row-reverse justify-end items-center relative">
       <IoCloseOutline
-        className={`absolute left-0 ml-4 text-2xl opacity-40 cursor-pointer active:text-greenColor duration-200 showClearButton active:scale-105 ${
+        className={`dark:text-white absolute left-0 ml-4 text-2xl opacity-40 cursor-pointer active:text-greenColor duration-200 showClearButton active:scale-105 ${
           showClearButton ? "absolute" : "hidden"
         }`}
         onClick={onClickClear}
@@ -40,10 +40,10 @@ const SearchBar = ({ placeholder = "البحث", onChange }) => {
         type="text"
         value={searchValue}
         placeholder={placeholder}
-        className="w-full py-4 px-12 border border-gray-300 rounded-3xl focus:outline-none focus:border-greenColor "
+        className="w-full py-4 px-12 border border-gray-300 dark:border-gray-700  rounded-3xl focus:outline-none dark:focus:outline-none focus:border-greenColor dark:focus:border-gray-600 dark:bg-dark_grayColor dark:text-white "
         onChange={handleChange}
       />
-      <FiSearch className="absolute mr-4 text-xl opacity-40" />
+      <FiSearch className="absolute mr-4 text-xl opacity-40 dark:text-white" />
     </div>
   );
 };

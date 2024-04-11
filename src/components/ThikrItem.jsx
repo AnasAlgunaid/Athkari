@@ -10,11 +10,11 @@ const ThikrItem = ({ text, repeat = 1, audio, elementIndex }) => {
 
   // Output the split parts
   return (
-    <section className="bg-whiteColor p-4 rounded-xl my-4 ">
+    <section className="bg-whiteColor dark:bg-dark_grayColor p-4 rounded-xl my-4 ">
       <div className="flex flex-row-reverse justify-between items-center">
         <div className="flex flex-row-reverse gap-2">
           <MdContentCopy
-            className="text-secondaryTextColor text-2xl hover:text-greenColor active:text-greenColor cursor-pointer hover:scale-105 duration-300"
+            className="text-blackColor dark:text-white opacity-60 text-2xl hover:text-greenColor dark:hover:text-greenColor active:text-greenColor cursor-pointer hover:scale-105 duration-300"
             onClick={() => {
               navigator.clipboard.writeText(text);
               setCopied(true);
@@ -30,7 +30,7 @@ const ThikrItem = ({ text, repeat = 1, audio, elementIndex }) => {
         </div>
       </div>
 
-      <p className=" text-blackColor text-lg md:text-xl mb-4 leading-[3rem] md:leading-[4rem]">
+      <p className=" text-blackColor dark:text-white text-lg md:text-xl mb-4 leading-[3rem] md:leading-[4rem]">
         {parts.map((part, index) => {
           if (part.startsWith("﴿")) {
             return (

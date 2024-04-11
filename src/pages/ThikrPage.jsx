@@ -34,7 +34,7 @@ const ThikrPage = () => {
       });
   }, []);
   return (
-    <section className="bg-grayColor py-4 md:py-8 min-h-screen">
+    <section className="bg-grayColor dark:bg-dark_blackColor dark:text-white py-4 md:py-8 min-h-screen">
       <div className="container">
         <div>
           {/*  go back  */}
@@ -56,7 +56,7 @@ const ThikrPage = () => {
           <>
             <div className="relative flex py-5 items-center">
               <div className="flex- grow border-t border-greenColor"></div>
-              <h1 className="flex-shrink mx-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-blackColor my-2 ">
+              <h1 className="flex-shrink mx-4 text-2xl sm:text-3xl md:text-4xl font-extrabold text-blackColor dark:text-white my-2 ">
                 {thikrTitle}{" "}
                 <HiSpeakerWave
                   className="inline mr-2 hover:text-greenColor active:text-greenColor cursor-pointer hover:scale-105 duration-300"

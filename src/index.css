@@ -3,14 +3,30 @@
 @tailwind utilities;
 
 .rhap_main-controls-button {
-  color: #00ac68;
+  @apply text-greenColor dark:text-white;
 }
 
 .rhap_progress-indicator,
 .rhap_progress-filled {
-  background-color: #00ac68;
+  @apply bg-greenColor dark:bg-white;
 }
 
 .rhap_container {
   border-radius: 0.5rem;
+}
+
+.rhap_container {
+  @apply dark:bg-[#21262d];
+}
+
+.rhap_time {
+  @apply dark:text-white;
+}
+
+/* Fixing input color problem */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  transition: background-color 0s 600000s, color 0s 600000s !important;
 }

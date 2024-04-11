@@ -8,6 +8,7 @@ module.exports = {
     "./src/**/*.{js,jsx}",
   ],
   prefix: "",
+  darkMode: "class",
   theme: {
     container: {
       center: true,
@@ -23,6 +24,8 @@ module.exports = {
         greenColor: "#00ac68",
         blackColor: "#030f19",
         secondaryTextColor: "#9097aa",
+        dark_blackColor: "#0d1117",
+        dark_grayColor: "#14181d",
       },
       fontFamily: {
         Almarai: ["Almarai", "sans-serif"],

@@ -25,7 +25,6 @@ const AthkarList = () => {
         setOriginalAthkars(data["العربية"]);
       })
       .catch((error) => {
-        console.error(error);
         setError(true);
       })
       .finally(() => {
@@ -42,7 +41,7 @@ const AthkarList = () => {
   };
 
   return (
-    <section className="bg-grayColor py-4 md:py-8 min-h-screen">
+    <section className="bg-grayColor dark:bg-dark_blackColor text-blackColor dark:text-white   py-4 md:py-8 min-h-screen">
       <div className="container">
         {/* <SectionTitle title="الأذكار" /> */}
         <SearchBar placeholder="البحث عن أذكار" onChange={handleSearchChange} />
