@@ -23,7 +23,7 @@ const ThemeSwitcher = () => {
   return (
     <button
       onClick={toggleDarkMode}
-      className="text-2xl flex justify-center items-center"
+      className="text-[32px] flex justify-center items-center "
     >
       {darkMode && <IoSunny />}
       {!darkMode && <IoMoon />}
