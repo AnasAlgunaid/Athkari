@@ -23,13 +23,13 @@ const FontSizeChanger = () => {
     <div>
       <div className="flex justify-center items-center gap-2 ">
         <button
-          className="border-2 border-gray-200 text-white h-[40px] w-[40px] rounded-full hover:bg-blackColor hover:border-blackColor duration-300 flex justify-center items-center "
+          className="border-2 border-gray-200 text-gray-200 h-[36px] w-[36px] rounded-full hover:bg-blackColor hover:border-blackColor duration-300 flex justify-center items-center "
           onClick={increaseFontSize}
         >
           أ +
         </button>
         <button
-          className="border-2 border-gray-200 text-white h-[40px] w-[40px]  rounded-full hover:bg-blackColor hover:border-blackColor duration-300 flex justify-center items-center"
+          className="border-2 border-gray-200 text-gray-200 h-[36px] w-[36px]  rounded-full hover:bg-blackColor hover:border-blackColor duration-300 flex justify-center items-center"
           onClick={decreaseFontSize}
         >
           أ -

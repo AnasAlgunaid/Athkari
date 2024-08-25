@@ -1,33 +1,58 @@
 import React, { useState, useEffect } from "react";
-import { IoMoon } from "react-icons/io5";
-import { IoSunny } from "react-icons/io5";
+import { DarkModeSwitch } from "react-toggle-dark-mode";
+
 const ThemeSwitcher = () => {
-  const [darkMode, setDarkMode] = useState(
-    localStorage.getItem("darkMode") === "true"
-  );
+  // Retrieve and parse the stored preference, or use the system preference
+  const storedPreference = localStorage.getItem("isDarkMode");
+  const userPrefersDark =
+    window.matchMedia &&
+    window.matchMedia("(prefers-color-scheme: dark)").matches;
+
+  // Function to validate and parse the stored preference
+  const getInitialDarkModeState = () => {
+    if (storedPreference === null) {
+      return userPrefersDark; // Default to system preference
+    }
+
+    try {
+      // Attempt to parse the stored value as JSON
+      const parsedPreference = JSON.parse(storedPreference);
+      // Ensure that the parsed value is a boolean
+      if (typeof parsedPreference === "boolean") {
+        return parsedPreference;
+      }
+    } catch (error) {}
+
+    // If parsing fails or value is not boolean, default to system preference
+    return userPrefersDark;
+  };
+
+  // Initialize state
+  const [isDarkMode, setIsDarkMode] = useState(getInitialDarkModeState);
 
   useEffect(() => {
-    const isDarkMode = localStorage.getItem("darkMode") === "true";
-    setDarkMode(isDarkMode);
-  }, []);
-
-  useEffect(() => {
-    document.documentElement.classList.toggle("dark", darkMode);
-    localStorage.setItem("darkMode", darkMode);
-  }, [darkMode]);
+    if (isDarkMode) {
+      document.documentElement.classList.add("dark");
+    } else {
+      document.documentElement.classList.remove("dark");
+    }
+  }, [isDarkMode]);
 
   const toggleDarkMode = () => {
-    setDarkMode((prevMode) => !prevMode);
+    setIsDarkMode((prev) => {
+      const newMode = !prev;
+      localStorage.setItem("isDarkMode", JSON.stringify(newMode)); // Save as string
+      return newMode;
+    });
   };
 
   return (
-    <button
-      onClick={toggleDarkMode}
-      className="text-[32px] flex justify-center items-center "
-    >
-      {darkMode && <IoSunny />}
-      {!darkMode && <IoMoon />}
-    </button>
+    <DarkModeSwitch
+      checked={isDarkMode}
+      onChange={toggleDarkMode}
+      sunColor="#fff"
+      size={28}
+    />
   );
 };
 
