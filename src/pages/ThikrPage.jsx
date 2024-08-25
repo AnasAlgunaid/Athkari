@@ -16,6 +16,15 @@ const ThikrPage = () => {
   const [listenToWholeThikr, setListenToWholeThikr] = useState(false);
   const state = useLocation();
   const navigate = useNavigate();
+
+  const handleGoBack = () => {
+    if (window.history.length > 1) {
+      navigate(-1); // Go back if there's a previous page
+    } else {
+      navigate("/"); // Otherwise, go to the home page
+    }
+  };
+
   useEffect(() => {
     fetch(`https://www.hisnmuslim.com/api/ar/${id}.json`)
       .then((res) => {
@@ -40,9 +49,7 @@ const ThikrPage = () => {
           {/*  go back  */}
           <button
             className="  border-greenColor border-2 font-extrabold text-greenColor px-4 pb-2 pt-1 rounded-full text-lg md:text-xl hover:bg-greenColor hover:text-white active:bg-greenColor active:text-white duration-300 "
-            onClick={() => {
-              navigate(-1);
-            }}
+            onClick={handleGoBack}
           >
             <IoIosArrowForward className="inline ml-1 text-lg md:text-xl" />
             رجوع
